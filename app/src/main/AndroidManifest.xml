@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
     <!-- Permission for scheduling alarms -->
     <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
 
@@ -14,26 +13,27 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme._23012011105_mad_prac4">
-
-        <!-- Declare Service -->
+        <activity
+            android:name=".AlarmService"
+            android:exported="false" />
+        <activity
+            android:name=".AlarmBroadcastService"
+            android:exported="false" /> <!-- Declare Service -->
         <service
             android:name=".AlarmServices"
-            android:exported="false" />
-
-        <!-- Declare BroadcastReceiver -->
+            android:exported="false" /> <!-- Declare BroadcastReceiver -->
         <receiver
             android:name=".AlarmBroadcastReceiver"
-            android:exported="false" />
-
-        <!-- Main Activity -->
+            android:exported="false" /> <!-- Main Activity -->
         <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
+
 </manifest>
